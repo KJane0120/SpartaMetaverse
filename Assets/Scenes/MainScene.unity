@@ -366,6 +366,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff425da7271176a4f9d928d9face8e18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterRenderer: {fileID: 1399139250}
+  weaponPivot: {fileID: 805540723}
 --- !u!1 &1399139248
 GameObject:
   m_ObjectHideFlags: 0
