@@ -13,6 +13,8 @@ public class FlappyPlane_GameManager : MonoBehaviour
     FlappyPlane_UIManager uiManager;
     public FlappyPlane_UIManager UIManager { get { return uiManager; } }
 
+    public bool isGameOver = true;
+
     private void Awake()
     {
         gameManager = this;
@@ -22,10 +24,14 @@ public class FlappyPlane_GameManager : MonoBehaviour
     void Start()
     {
         uiManager.UpdateScore(0);
+        isGameOver = false;
     }
+
+
 
     public void GameOver()
     {
+        isGameOver = true;
         Debug.Log("Game over");
         uiManager.SetRestart();
     }

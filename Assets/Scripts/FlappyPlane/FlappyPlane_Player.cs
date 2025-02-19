@@ -32,10 +32,13 @@ public class FlappyPlane_Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (isDead)
         {
+
             if (deathCooldown <= 0)
             {
+               
                 //게임 재시작
                 if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
                 {

@@ -24,24 +24,25 @@ public class FlappyPlane_UIManager : MonoBehaviour
     public TextMeshProUGUI restartText;
 
     UIState currentState = UIState.Home;
-    HomeUI homeUI = null;
-    GameUI gameUI = null;
-    ScoreUI scoreUI = null;
+    FlappyPlane_HomeUI homeUI = null;
+    FlappyPlane_GameUI gameUI = null;
+    //ScoreUI scoreUI = null;
 
     private void Awake()
     {
         instance = this;
 
-        homeUI = GetComponentInChildren<HomeUI>(true);
+        homeUI = GetComponentInChildren<FlappyPlane_HomeUI>(true);
         homeUI?.Init(this);
 
-        gameUI = GetComponentInChildren<GameUI>(true);
+        gameUI = GetComponentInChildren<FlappyPlane_GameUI>(true);
         gameUI?.Init(this);
 
-        scoreUI = GetComponentInChildren<ScoreUI>(true);
-        scoreUI?.Init(this);
+        //scoreUI = GetComponentInChildren<ScoreUI>(true);
+        //scoreUI?.Init(this);
 
         ChangeState(UIState.Home);
+        Time.timeScale = 0f;
 
     }
     // Start is called before the first frame update
@@ -69,12 +70,14 @@ public class FlappyPlane_UIManager : MonoBehaviour
         currentState = state;
         homeUI?.SetActive(currentState);
         gameUI?.SetActive(currentState);
-        scoreUI?.SetActive(currentState);
+        //scoreUI?.SetActive(currentState);
     }
 
     public void OnClickStart()
     {
         ChangeState(UIState.Game);
+        Time.timeScale = 1.0f;
+        //startgame() 게임 초반 초기화 해주는 함수 호출
     }
 
     public void OnClickExit()
