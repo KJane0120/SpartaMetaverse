@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.XR;
 
 
@@ -86,7 +87,8 @@ public class FlappyPlane_UIManager : MonoBehaviour
     public void OnClickExit()
     {
 #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
+        SceneManager.LoadScene("MainScene");
+        //UnityEditor.EditorApplication.isPlaying = false;
 #else
         Application.Quit();
 #endif
