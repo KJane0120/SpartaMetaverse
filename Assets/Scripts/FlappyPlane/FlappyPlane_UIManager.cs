@@ -21,7 +21,6 @@ public class FlappyPlane_UIManager : MonoBehaviour
     }
 
     public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI restartText;
    
     UIState currentState = UIState.Home;
     FlappyPlane_HomeUI homeUI = null;
@@ -48,16 +47,14 @@ public class FlappyPlane_UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (restartText == null)
-            Debug.LogError("restart text is null");
         if (scoreText == null)
             Debug.LogError("score text is null");
-        restartText.gameObject.SetActive(false);
     }
 
     public void SetRestart()
     {
-        restartText.gameObject.SetActive(true);
+        ChangeState(UIState.Score);
+        scoreUI.UpdateScore(FlappyPlane_GameManager.Instance.currentScore);
     }
 
     public void UpdateScore(int score)
@@ -75,8 +72,15 @@ public class FlappyPlane_UIManager : MonoBehaviour
 
     public void OnClickStart()
     {
-        ChangeState(UIState.Game);
-        Time.timeScale = 1.0f;
+        if (FlappyPlane_GameManager.Instance.isGameOver)
+        {
+            FlappyPlane_GameManager.Instance.RestartGame();
+        }
+        else
+        {
+            ChangeState(UIState.Game);
+            Time.timeScale = 1.0f;
+        }
     }
 
     public void OnClickExit()

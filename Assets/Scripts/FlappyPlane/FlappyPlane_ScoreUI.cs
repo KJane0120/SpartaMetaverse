@@ -6,11 +6,11 @@ using UnityEngine.UI;
 
 public class FlappyPlane_ScoreUI : FlappyPlane_BaseUI
 {
+    FlappyPlane_GameManager gameManager;
 
     public TextMeshProUGUI currentScoreText;
     public TextMeshProUGUI bestScoreText;
 
-    
 
     protected override UIState GetUIState()
     {
@@ -28,7 +28,7 @@ public class FlappyPlane_ScoreUI : FlappyPlane_BaseUI
     public void UpdateScore(int currentScore)
     {
         currentScoreText.text = currentScore.ToString();
-        int bestScore = PlayerPrefs.GetInt("BestScore", 0);
-        bestScoreText.text = bestScore.ToString();
+        FlappyPlane_GameManager.Instance.bestScore = PlayerPrefs.GetInt("BestScore", 0);
+        bestScoreText.text = FlappyPlane_GameManager.Instance.bestScore.ToString();
     }
 }

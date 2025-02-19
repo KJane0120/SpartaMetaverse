@@ -58,6 +58,7 @@ public class FlappyPlane_GameManager : MonoBehaviour
         Debug.Log("Game over");
         uiManager.SetRestart();
 
+
     }
 
     public void RestartGame()
@@ -74,4 +75,6 @@ public class FlappyPlane_GameManager : MonoBehaviour
         Debug.Log("Score: " + currentScore);
         uiManager.UpdateScore(currentScore);
     }
+
+    
 }
