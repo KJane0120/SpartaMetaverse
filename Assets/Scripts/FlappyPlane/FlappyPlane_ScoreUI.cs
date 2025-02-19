@@ -10,6 +10,7 @@ public class FlappyPlane_ScoreUI : FlappyPlane_BaseUI
 
     public TextMeshProUGUI currentScoreText;
     public TextMeshProUGUI bestScoreText;
+    public TextMeshProUGUI isSuccessText;
 
 
     protected override UIState GetUIState()
@@ -23,6 +24,7 @@ public class FlappyPlane_ScoreUI : FlappyPlane_BaseUI
 
         currentScoreText = transform.Find("CurrentScoreText").GetComponentInChildren<TextMeshProUGUI>();
         bestScoreText = transform.Find("BestScoreText").GetComponentInChildren<TextMeshProUGUI>();
+        isSuccessText = transform.Find("IsSuccessText").GetComponentInChildren<TextMeshProUGUI>();
     }
 
     public void UpdateScore(int currentScore)
@@ -30,5 +32,10 @@ public class FlappyPlane_ScoreUI : FlappyPlane_BaseUI
         currentScoreText.text = currentScore.ToString();
         FlappyPlane_GameManager.Instance.bestScore = PlayerPrefs.GetInt("BestScore", 0);
         bestScoreText.text = FlappyPlane_GameManager.Instance.bestScore.ToString();
+        if (currentScore > 10)
+        {
+            isSuccessText.text = "You Win!";
+        }
+        else isSuccessText.text = "You Failed..";
     }
 }
