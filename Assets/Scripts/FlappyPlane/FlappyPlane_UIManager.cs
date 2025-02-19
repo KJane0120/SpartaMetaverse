@@ -22,7 +22,7 @@ public class FlappyPlane_UIManager : MonoBehaviour
     }
 
     public TextMeshProUGUI scoreText;
-   
+
     UIState currentState = UIState.Home;
     FlappyPlane_HomeUI homeUI = null;
     FlappyPlane_GameUI gameUI = null;
@@ -86,11 +86,14 @@ public class FlappyPlane_UIManager : MonoBehaviour
 
     public void OnClickExit()
     {
-#if UNITY_EDITOR
-        SceneManager.LoadScene("MainScene");
+#if UNITY_EDITOR 
+        {
+            Time.timeScale = 1.0f;
+            SceneManager.LoadScene("MainScene");
+        }
 #else
         Application.Quit();
 #endif
 
+        }
     }
-}
