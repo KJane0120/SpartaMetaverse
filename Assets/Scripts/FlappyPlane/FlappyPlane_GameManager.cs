@@ -39,6 +39,11 @@ public class FlappyPlane_GameManager : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        currentScore = 0;
+        uiManager.UpdateScore(0);
+
+        
+
     }
 
     public void AddScore(int score)
