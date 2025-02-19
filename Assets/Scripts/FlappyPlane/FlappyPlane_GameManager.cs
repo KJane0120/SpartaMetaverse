@@ -10,25 +10,24 @@ public class FlappyPlane_GameManager : MonoBehaviour
 
     public int currentScore = 0;
 
+    FlappyPlane_UIManager uiManager;
+    public FlappyPlane_UIManager UIManager { get { return uiManager; } }
+
     private void Awake()
     {
         gameManager = this;
+        uiManager = FindObjectOfType<FlappyPlane_UIManager>();
     }
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        uiManager.UpdateScore(0);
     }
 
     public void GameOver()
     {
         Debug.Log("Game over");
+        uiManager.SetRestart();
     }
 
     public void RestartGame()
@@ -40,5 +39,6 @@ public class FlappyPlane_GameManager : MonoBehaviour
     {
         currentScore += score;
         Debug.Log("Score: " + currentScore);
+        uiManager.UpdateScore(currentScore);
     }
 }
