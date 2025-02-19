@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FlappyPlane_Player : MonoBehaviour
 {
-
+    FlappyPlane_GameManager gameManager;
     Animator animator;
     Rigidbody2D _rigidbody;
 
@@ -17,6 +17,7 @@ public class FlappyPlane_Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = FlappyPlane_GameManager.Instance;
         animator = GetComponentInChildren<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
 
@@ -36,6 +37,10 @@ public class FlappyPlane_Player : MonoBehaviour
             if (deathCooldown <= 0)
             {
                 //게임 재시작
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+                {
+                    gameManager.RestartGame();
+                }
             }
             else
             {
@@ -80,5 +85,6 @@ public class FlappyPlane_Player : MonoBehaviour
         deathCooldown = 1f;
 
         animator.SetInteger("IsDie", 1);
+        gameManager.GameOver();
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FlappyPlane_Obstacle : MonoBehaviour
 {
+    FlappyPlane_GameManager gameManager;
     public float highPosY = 1f;
     public float lowPosY = -1f;
 
@@ -14,6 +15,11 @@ public class FlappyPlane_Obstacle : MonoBehaviour
     public Transform bottomObject;
 
     public float widthPadding = 4f;
+
+    private void Start()
+    {
+        gameManager = FlappyPlane_GameManager.Instance;
+    }
     public Vector3 SetRandomPlace(Vector3 lastPosition, int obstacleCount)
     {
         float holeSize = Random.Range(holeSizeMin, holeSizeMax);
@@ -28,5 +34,14 @@ public class FlappyPlane_Obstacle : MonoBehaviour
         transform.position = placePosition;
 
         return placePosition;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        FlappyPlane_Player player = collision.GetComponent<FlappyPlane_Player>();
+        if(player != null )
+        {
+            gameManager.AddScore(1);
+        }
     }
 }
