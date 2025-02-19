@@ -19,7 +19,7 @@ public class FlappyPlane_GameManager : MonoBehaviour
     public int SaveBestScore(int currentScore)
     {
         // 기존 최고 점수를 불러옴 (없으면 0)
-        int bestScore = PlayerPrefs.GetInt("BestScore", 0);
+        bestScore = PlayerPrefs.GetInt("BestScore", 0);
 
         // 현재 점수가 최고 점수보다 높으면 저장
         if (currentScore > bestScore)
@@ -36,6 +36,7 @@ public class FlappyPlane_GameManager : MonoBehaviour
     private void Awake()
     {
         gameManager = this;
+
         uiManager = FindObjectOfType<FlappyPlane_UIManager>();
     }
     // Start is called before the first frame update
@@ -45,7 +46,11 @@ public class FlappyPlane_GameManager : MonoBehaviour
         isGameOver = false;
     }
 
-
+    private void Update()
+    {
+        bestScore = PlayerPrefs.GetInt("BestScore", 0);
+        Debug.Log($"currentScore: {currentScore}, bestScore: {bestScore}");
+    }
 
     public void GameOver()
     {

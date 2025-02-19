@@ -22,7 +22,7 @@ public class FlappyPlane_UIManager : MonoBehaviour
 
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI restartText;
-
+   
     UIState currentState = UIState.Home;
     FlappyPlane_HomeUI homeUI = null;
     FlappyPlane_GameUI gameUI = null;

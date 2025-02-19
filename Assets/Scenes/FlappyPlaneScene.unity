@@ -155,8 +155,6 @@ RectTransform:
   m_Children:
   - {fileID: 1007140608}
   - {fileID: 827332638}
-  - {fileID: 1134540983}
-  - {fileID: 987810103}
   m_Father: {fileID: 1056324509}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -701,6 +699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentScore: 0
+  bestScore: 0
   isGameOver: 1
 --- !u!1 &199138329
 GameObject:
@@ -3496,12 +3495,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 987810102}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 9599281}
+  m_Father: {fileID: 1056324509}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3942,6 +3941,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9599281}
+  - {fileID: 1134540983}
+  - {fileID: 987810103}
   - {fileID: 904621239}
   - {fileID: 196588049}
   m_Father: {fileID: 1360878008}
@@ -3963,6 +3964,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c69db8224419fb41b59da341ce8c0e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentScoreText: {fileID: 0}
+  bestScoreText: {fileID: 0}
 --- !u!1 &1065776362
 GameObject:
   m_ObjectHideFlags: 0
@@ -4116,12 +4119,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1134540982}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 9599281}
+  m_Father: {fileID: 1056324509}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6074,6 +6077,7 @@ MonoBehaviour:
   flapForce: 6
   forwardSpeed: 3
   isDead: 0
+  isFlap: 0
   godMode: 0
 --- !u!1 &1878095814
 GameObject:
