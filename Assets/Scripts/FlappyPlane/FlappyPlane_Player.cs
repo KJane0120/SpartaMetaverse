@@ -38,7 +38,7 @@ public class FlappyPlane_Player : MonoBehaviour
 
             if (deathCooldown <= 0)
             {
-               
+                Time.timeScale = 0f;
                 //게임 재시작
                 if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
                 {

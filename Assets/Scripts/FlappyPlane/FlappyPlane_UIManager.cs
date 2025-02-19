@@ -77,7 +77,6 @@ public class FlappyPlane_UIManager : MonoBehaviour
     {
         ChangeState(UIState.Game);
         Time.timeScale = 1.0f;
-        //startgame() 게임 초반 초기화 해주는 함수 호출
     }
 
     public void OnClickExit()

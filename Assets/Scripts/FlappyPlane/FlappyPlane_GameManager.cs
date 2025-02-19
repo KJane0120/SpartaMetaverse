@@ -34,6 +34,7 @@ public class FlappyPlane_GameManager : MonoBehaviour
         isGameOver = true;
         Debug.Log("Game over");
         uiManager.SetRestart();
+
     }
 
     public void RestartGame()
@@ -41,8 +42,6 @@ public class FlappyPlane_GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         currentScore = 0;
         uiManager.UpdateScore(0);
-
-        
 
     }
 
