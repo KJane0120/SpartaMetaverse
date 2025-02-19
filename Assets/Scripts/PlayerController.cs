@@ -6,7 +6,7 @@ public class PlayerController : BaseController
 {
     private Camera mainCamera;
     private bool isFlap = false;
-    private float flapForce = 5f;
+    private float flapForce = 15f;
 
 
     protected override void Start()
