@@ -9,7 +9,7 @@ public enum UIState
 {
     Home,
     Game,
-    Score
+    Score,
 
 }
 public class FlappyPlane_UIManager : MonoBehaviour
@@ -26,7 +26,7 @@ public class FlappyPlane_UIManager : MonoBehaviour
     UIState currentState = UIState.Home;
     FlappyPlane_HomeUI homeUI = null;
     FlappyPlane_GameUI gameUI = null;
-    //ScoreUI scoreUI = null;
+    FlappyPlane_ScoreUI scoreUI = null;
 
     private void Awake()
     {
@@ -38,8 +38,8 @@ public class FlappyPlane_UIManager : MonoBehaviour
         gameUI = GetComponentInChildren<FlappyPlane_GameUI>(true);
         gameUI?.Init(this);
 
-        //scoreUI = GetComponentInChildren<ScoreUI>(true);
-        //scoreUI?.Init(this);
+        scoreUI = GetComponentInChildren<FlappyPlane_ScoreUI>(true);
+        scoreUI?.Init(this);
 
         ChangeState(UIState.Home);
         Time.timeScale = 0f;
@@ -70,7 +70,7 @@ public class FlappyPlane_UIManager : MonoBehaviour
         currentState = state;
         homeUI?.SetActive(currentState);
         gameUI?.SetActive(currentState);
-        //scoreUI?.SetActive(currentState);
+        scoreUI?.SetActive(currentState);
     }
 
     public void OnClickStart()

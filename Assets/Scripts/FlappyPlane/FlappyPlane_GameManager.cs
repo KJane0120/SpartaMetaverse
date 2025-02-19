@@ -9,11 +9,29 @@ public class FlappyPlane_GameManager : MonoBehaviour
     public static FlappyPlane_GameManager Instance { get { return gameManager; } }
 
     public int currentScore = 0;
+    public int bestScore = 0;
 
     FlappyPlane_UIManager uiManager;
     public FlappyPlane_UIManager UIManager { get { return uiManager; } }
 
     public bool isGameOver = true;
+
+    public int SaveBestScore(int currentScore)
+    {
+        // 기존 최고 점수를 불러옴 (없으면 0)
+        int bestScore = PlayerPrefs.GetInt("BestScore", 0);
+
+        // 현재 점수가 최고 점수보다 높으면 저장
+        if (currentScore > bestScore)
+        {
+            bestScore = currentScore;
+            PlayerPrefs.SetInt("BestScore", bestScore);
+            PlayerPrefs.Save(); // 변경 사항을 즉시 저장
+        }
+
+        return bestScore;
+    }
+
 
     private void Awake()
     {

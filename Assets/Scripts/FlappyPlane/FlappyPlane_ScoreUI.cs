@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlappyPlane_ScoreUI : MonoBehaviour
+public class FlappyPlane_ScoreUI : FlappyPlane_BaseUI
 {
-    // Start is called before the first frame update
-    void Start()
+    protected override UIState GetUIState()
     {
-        
+        return UIState.Score;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Init(FlappyPlane_UIManager uiManager)
     {
-        
+        base.Init(uiManager);
     }
 }

@@ -5,7 +5,6 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public Transform target;
-    float offsetX;
     float offsetY;
 
     void Start()
@@ -13,7 +12,6 @@ public class CameraFollow : MonoBehaviour
         if (target == null)
             return;
 
-        offsetX = transform.position.x - target.position.x;
         offsetY = transform.position.y - target.position.y;
     }
 
@@ -23,7 +21,6 @@ public class CameraFollow : MonoBehaviour
             return;
 
         Vector3 pos = transform.position;
-        pos.x = target.position.x + offsetX;
         pos.y = target.position.y + offsetY;
         transform.position = pos;
     }

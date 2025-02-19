@@ -12,7 +12,7 @@ public class FlappyPlane_Player : MonoBehaviour
     public float forwardSpeed = 3f;
     public bool isDead = false;
     float deathCooldown = 0f;
-    bool isFlap = false;
+    public bool isFlap = false;
     public bool godMode = false;
     // Start is called before the first frame update
     void Start()
@@ -38,7 +38,7 @@ public class FlappyPlane_Player : MonoBehaviour
 
             if (deathCooldown <= 0)
             {
-                Time.timeScale = 0f;
+                
                 //게임 재시작
                 if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
                 {
