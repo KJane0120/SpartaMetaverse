@@ -88,7 +88,6 @@ public class FlappyPlane_UIManager : MonoBehaviour
     {
 #if UNITY_EDITOR
         SceneManager.LoadScene("MainScene");
-        //UnityEditor.EditorApplication.isPlaying = false;
 #else
         Application.Quit();
 #endif
