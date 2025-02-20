@@ -815,7 +815,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 314695229}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db1ffbf9457a676409cce75b889ec02c, type: 3}
+  m_Script: {fileID: 11500000, guid: a3c124bc8db93ac41ab5498e5ff02402, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1151478315}
@@ -7035,6 +7035,7 @@ GameObject:
   - component: {fileID: 1282865360}
   - component: {fileID: 1282865362}
   - component: {fileID: 1282865361}
+  - component: {fileID: 1282865363}
   m_Layer: 0
   m_Name: TombStone
   m_TagString: Untagged
@@ -7155,6 +7156,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1282865363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282865359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207b0bd8bd9a31d44af19e1c502a208a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 1733005830}
 --- !u!1 &1393614503
 GameObject:
   m_ObjectHideFlags: 0
@@ -9925,7 +9939,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1733005827
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9993,7 +10007,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733005826}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
