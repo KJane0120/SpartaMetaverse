@@ -49,13 +49,13 @@ public class FlappyPlane_GameManager : MonoBehaviour
     private void Update()
     {
         bestScore = PlayerPrefs.GetInt("BestScore", 0);
-        Debug.Log($"currentScore: {currentScore}, bestScore: {bestScore}");
+        //Debug.Log($"currentScore: {currentScore}, bestScore: {bestScore}");
     }
 
     public void GameOver()
     {
         isGameOver = true;
-        Debug.Log("Game over");
+        //Debug.Log("Game over");
         uiManager.SetRestart();
 
 
@@ -72,7 +72,7 @@ public class FlappyPlane_GameManager : MonoBehaviour
     public void AddScore(int score)
     {
         currentScore += score;
-        Debug.Log("Score: " + currentScore);
+        //Debug.Log("Score: " + currentScore);
         uiManager.UpdateScore(currentScore);
     }
 
